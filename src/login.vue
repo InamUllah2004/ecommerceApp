@@ -8,9 +8,17 @@
     </form>
 </div>  
 
-<div class="bt2">
+<!-- <div class="bt2">
   <button class="Signup" @click="handleClick1">Sign Up</button>
-</div>
+</div> -->
+<button class="glow-btn" @click="handleClick1">
+  Sign Up
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 
 </template>
 
@@ -80,13 +88,115 @@ button {
 button:hover {
   background-color: #128f68;
 }
-.bt2{
+/* .bt2{
   position: absolute;
   margin-top:-550px;
   width:10%;
   height:50px;
   background-color: white;
+} */
+.glow-btn {
+  position: absolute;
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 16px;
+  color: #03e9f4;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 6px;
+  width: 10%;
+  text-align: center;
+  margin-top:-520px;
 }
+
+.glow-btn:hover {
+  background: #03e9f4;
+  color: #fff;
+  box-shadow: 0 0 10px #03e9f4, 0 0 40px #03e9f4, 0 0 80px #03e9f4;
+}
+
+.glow-btn span {
+  position: absolute;
+  display: block;
+}
+
+.glow-btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animate1 1s linear infinite;
+}
+
+.glow-btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.glow-btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.glow-btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+
 .Signup{
   width:90%;
   margin-left:5px;
