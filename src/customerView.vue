@@ -5,7 +5,8 @@
     <div v-if="customers.length > 0">
       <ul>
         <li v-for="customer in customers" :key="customer.id">
-          <strong>{{ customer.name }}</strong> — {{ customer.email }}
+          <strong>{{ customer.name }}</strong> — {{ customer.email }} - {{ customer.role }}
+         
         </li>
       </ul>
     </div>

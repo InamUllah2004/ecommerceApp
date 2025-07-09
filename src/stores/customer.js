@@ -3,11 +3,12 @@ export class Customer {
     static customerID=Customer.loadID();
   
   //Constructor//
-    constructor(name, email,password) {
+    constructor(name, email,password,role) {
     this.id = this.customerID++;
     this.name = name;
     this.email = email;
     this.password=password;
+    this.role=role;
     Customer.setID();
   }
   //Getter Function

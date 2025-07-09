@@ -3,12 +3,14 @@ import { Customer } from './customer'
 
 export const useCustomerStore = defineStore('customer', {
   state: () => ({
-    customers: JSON.parse(localStorage.getItem('customers')) || []
+    customers: JSON.parse(localStorage.getItem('customers')) || [],
+     currentEmail: '',
+     currentRole: ''
   }),
 
   actions: {
-    addCustomer(name, email, password) {
-      const newCustomer = new Customer(name, email, password)
+    addCustomer(name, email, password,role) {
+      const newCustomer = new Customer(name, email, password,role)
       this.customers.push(newCustomer)
       this.saveToLocalStorage()
     },
