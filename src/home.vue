@@ -93,17 +93,17 @@ const activeTab = ref('signup') // default is Sign Up
 
 .con {
   position: relative;
-  margin-left: 600px;
-  width: 880px;
-  height: 1000px;
+  margin-left: 500px;
+  width: 960px;
+  height: 900px;
   margin-top: -700px;
-  background-color: black;
+  background-color:white;
 }
 
 .image {
   position: absolute;
-  height: 850px;
-  width: 900px; 
+  height: 900px;
+  width: 960px; 
  
 }
 .form2{

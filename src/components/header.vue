@@ -3,7 +3,7 @@
     <nav class="nav">
       <template v-if="role === 'customer'">
         <a href="#">Home</a>
-        <a href="#">Orders</a>
+        <a href="#">Products</a>
         <a href="#">Profile</a>
       </template>
 
