@@ -22,6 +22,14 @@ export const useCustomerStore = defineStore('customer', {
 
     saveToLocalStorage() {
       localStorage.setItem('customers', JSON.stringify(this.customers))
+    },
+    seedAdmin() {
+      const hasAdmin = this.customers.some(c => c.role === 'admin')
+      if (!hasAdmin) {
+        const defaultAdmin = new Customer('Admin', 'admin@gmail.com', 'Admin123', 'admin')
+        this.customers.push(defaultAdmin)
+        this.saveToLocalStorage()
+      }
     }
   }
 })

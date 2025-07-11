@@ -2,8 +2,8 @@
   <Header :role="store.currentRole" class="header" />
 
   <!-- FOOTBALL SHOES SECTION -->
-  <div class="Skills">
-    <h1 class="Heading1">Football Shoes:</h1>
+  <div class="Skills" v-if="store.currentRole==='customer'">
+   <h1 class="Heading1">Football Shoes:</h1>
     <div class="image-gallery">
       <div class="gallery-grid">
         <div
@@ -21,7 +21,7 @@
   </div>
 
   <!-- SHIRTS SECTION -->
-  <div class="Skills">
+  <div class="Skills" v-if="store.currentRole==='customer'">
     <h1 class="Heading1" style="margin-top: 50px ;position:relative">Shirts:</h1>
     <div class="image-gallery">
       <div class="gallery-grid">
@@ -90,12 +90,6 @@ const shirts = computed(() =>
 
 
 <style scoped>
-.header {
-  margin-top: 20px;
-  height: 60px;
-  border-radius: 7px;
-  color: white;
-}
 
 .image-gallery {
   position: relative;

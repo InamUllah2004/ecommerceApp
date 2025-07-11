@@ -1,8 +1,8 @@
 <template>
   <div class="signup">
     <form class="sign1" @submit.prevent="handleSignup">
-     <InputBox v-model="email" type="email" @validation="emailValid = $event" />
-     <InputBox v-model="password" type="password" :disabled="!emailValid" @validation="passwordValid = $event" />
+     <InputBox v-model="email" type="email" @validation="emailValid = $event" placeholder="email" />
+     <InputBox v-model="password" type="password" :disabled="!emailValid" @validation="passwordValid = $event" placeholder="password" />
      <button
         type="submit"
         @click="handleClick"
@@ -42,6 +42,7 @@ function handleClick() {
     store.currentEmail = user.email
     store.currentRole = user.role
     alert(`Welcome ${user.name}!`)
+    alert(`Welcome ${store.currentRole}!`)
     email.value = ''
     password.value = ''
     errorMessage.value = ''
@@ -87,13 +88,6 @@ button {
 button:hover {
   background-color: #128f68;
 }
-/* .bt2{
-  position: absolute;
-  margin-top:-550px;
-  width:10%;
-  height:50px;
-  background-color: white;
-} */
 .Signup{
   width:90%;
   margin-left:5px;
