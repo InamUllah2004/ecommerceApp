@@ -11,6 +11,7 @@
       </ul>
     </div>
     <p v-else>No employees found.</p>
+    <customerView/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@
 import { useEmployeeStore } from './stores/employeeData'
 import { useRouter } from 'vue-router'
 import Header from './components/Header.vue';
+import customerView from './customerView.vue';
 const router=useRouter();
 
 const store = useEmployeeStore()

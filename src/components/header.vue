@@ -19,9 +19,16 @@
      <div v-if="showSubmenu" class="submenu">
      <router-link to="/Emp">Add Employee</router-link>
      </div>
+     
      <a @click="handleClick3">View All Employees</a>
 
-  </div>
+     <a @click="handleClick4">Products Graph</a>
+     <div v-if="showSubMenu1" class="submenu">
+      <router-link to="/graphs">Products Graph</router-link>
+      <router-link to="/graphs1">Users Graph</router-link>
+      </div>
+    
+    </div>
 </template>
 
     </nav>
@@ -38,11 +45,15 @@ function handleClick3(){
 const props = defineProps(['role'])
 
 const showSubmenu = ref(false)
+const showSubMenu1 = ref(false)
+
 
 function toggleSubmenu() {
   showSubmenu.value = !showSubmenu.value
 }
-
+function handleClick4(){
+  showSubMenu1.value = !showSubMenu1.value
+}
 
 </script>
 

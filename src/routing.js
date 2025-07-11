@@ -8,6 +8,8 @@ import emp from './addEmp.vue'
 import view from './customerView.vue'
 import empView from './employeeView.vue'
 import empForm from './employeeForm.vue'
+import graph from  './graphs.vue'
+import graph1 from  './graph1.vue'
 const routes = [
   { path: '/', component: Home },
   { path: '/signup', component: Signup },
@@ -18,6 +20,8 @@ const routes = [
    {path:'/view',component:view},
   {path:'/empView',component:empView},
   {path:'/empForm',component:empForm},
+  {path:'/graphs',component:graph},
+  {path:'/graphs1',component:graph1}
 ]
 
 const router = createRouter({
