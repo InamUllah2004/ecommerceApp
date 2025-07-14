@@ -2,14 +2,11 @@
   <header :class="role === 'admin' ? 'sidebar' : 'header'">
     <nav class="nav">
       <template v-if="role === 'customer'">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Profile</a>
+        <a @click="handleclick6">Home</a>
+        <a @click="handleclick7">Profile</a>
       </template>
 
       <template v-else-if="role === 'seller'">
-        <a href="#">Inventory</a>
-        <a href="#">Orders</a>
         <router-link to="/productManage">Manage Products</router-link>
       </template>
 
@@ -57,7 +54,12 @@ function handleClick4(){
 function handleClick5(){
   router.push("/orderView")
 }
-
+function handleclick6(){
+  router.push("/dash")
+}
+function handleclick7(){
+  router.push("/profile")
+}
 </script>
 
 <style scoped>

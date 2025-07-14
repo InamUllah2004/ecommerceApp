@@ -14,6 +14,7 @@ import prod1 from './productForm.vue'
 import order from './orderForm.vue'
 import cart from './cart.vue'
 import orderView from './orderView.vue'
+import profile from './profile.vue'
 const routes = [
   { path: '/', component: Home },
   { path: '/signup', component: Signup },
@@ -29,7 +30,8 @@ const routes = [
   {path:'/prodForm',component:prod1},
   {path:'/orderForm',component:order},
    {path:'/cart',component:cart},
-    {path:'/orderView',component:orderView}
+    {path:'/orderView',component:orderView},
+    {path:'/profile',component:profile}
 ]
 
 const router = createRouter({
