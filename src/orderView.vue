@@ -1,4 +1,5 @@
 <template>
+     <Header :role="'admin'"/>
   <div class="order-view">
     <h2>All Orders</h2>
 
@@ -32,7 +33,7 @@
 <script setup>
 import { useOrderStore } from './stores/orderData'
 import { onMounted, ref } from 'vue'
-
+import Header from './components/Header.vue'
 const orderStore = useOrderStore()
 const orders = ref([])
 
