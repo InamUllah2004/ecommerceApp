@@ -21,6 +21,8 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCustomerStore } from './stores/customerData'
 import InputBox from './components/InputBox.vue'
+import { useCartStore } from './stores/cartData';
+const cart=useCartStore();
 
 const router = useRouter()
 const store = useCustomerStore()
@@ -41,7 +43,7 @@ function handleClick() {
   if (user) {
     store.currentEmail = user.email
     store.currentRole = user.role
-    alert(`Welcome ${user.name}!`)
+    alert(`Welcome ${user.email}!`)
     alert(`Welcome ${store.currentRole}!`)
     email.value = ''
     password.value = ''
@@ -50,6 +52,8 @@ function handleClick() {
   } else {
     errorMessage.value = 'Invalid email or password.'
   }
+  cart.clearCart()
+ 
 }
 </script>
 

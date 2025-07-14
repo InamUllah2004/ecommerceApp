@@ -68,7 +68,9 @@ const selectedProduct = ref(null)
 
 function showDetails(product) {
   selectedProduct.value = product
+  productStore.setCurrentProductId(product.id) 
 }
+
 function closeModal() {
   selectedProduct.value = null
 }

@@ -7,14 +7,31 @@
       <p><strong>Category:</strong> {{ product.category }}</p>
       <p><strong>Stock:</strong> {{ product.stock }}</p>
       <button @click="$emit('close')">Close</button>
+      <button @click="handleOrder">Buy Now</button>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+import { useProductStore } from './stores/productData'
+import { useCartStore } from './stores/cartData'
+
+const cartStore = useCartStore()
+
+
+
+const productStore = useProductStore()
+const router = useRouter()
+
 const props = defineProps({
   product: Object
 })
+
+function handleOrder() {
+  productStore.currentProduct = props.product.id  
+  router.push('/orderForm')
+}
 </script>
 
 <style scoped>

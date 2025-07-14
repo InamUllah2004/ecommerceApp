@@ -10,6 +10,10 @@ import empView from './employeeView.vue'
 import empForm from './employeeForm.vue'
 import graph from  './graphs.vue'
 import graph1 from  './graph1.vue'
+import prod1 from './productForm.vue'
+import order from './orderForm.vue'
+import cart from './cart.vue'
+import orderView from './orderView.vue'
 const routes = [
   { path: '/', component: Home },
   { path: '/signup', component: Signup },
@@ -21,7 +25,11 @@ const routes = [
   {path:'/empView',component:empView},
   {path:'/empForm',component:empForm},
   {path:'/graphs',component:graph},
-  {path:'/graphs1',component:graph1}
+  {path:'/graphs1',component:graph1},
+  {path:'/prodForm',component:prod1},
+  {path:'/orderForm',component:order},
+   {path:'/cart',component:cart},
+    {path:'/orderView',component:orderView}
 ]
 
 const router = createRouter({

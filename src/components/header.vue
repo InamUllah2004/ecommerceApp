@@ -22,12 +22,12 @@
      
      <a @click="handleClick3">View All Employees</a>
 
-     <a @click="handleClick4">Products Graph</a>
+     <a @click="handleClick4">Stats</a>
      <div v-if="showSubMenu1" class="submenu">
       <router-link to="/graphs">Products Graph</router-link>
       <router-link to="/graphs1">Users Graph</router-link>
       </div>
-    
+     <a @click="handleClick5">View orders placed</a>
     </div>
 </template>
 
@@ -53,6 +53,9 @@ function toggleSubmenu() {
 }
 function handleClick4(){
   showSubMenu1.value = !showSubMenu1.value
+}
+function handleClick5(){
+  router.push("/orderView")
 }
 
 </script>

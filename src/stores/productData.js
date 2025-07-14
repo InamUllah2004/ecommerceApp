@@ -4,7 +4,8 @@ import { Product } from './product.js'
 
 export const useProductStore = defineStore('product', {
   state: () => ({
-    products: JSON.parse(localStorage.getItem('products')) || []
+    products: JSON.parse(localStorage.getItem('products')) || [],
+    currentProduct:-1
   }),
 
   actions: {
@@ -28,6 +29,11 @@ export const useProductStore = defineStore('product', {
       localStorage.removeItem('products')
       localStorage.setItem('lastProductId', '0')
     },
+    setCurrentProductId(id) {
+     this.currentProduct = id
+     localStorage.setItem('currentProduct', id)
+    },
+
 
     seedProducts() {
       if (this.products.length > 0) return

@@ -21,6 +21,8 @@
         <p class="product-price">Rs {{ product.price }}</p>
       </div>
     </div>
+    <button class="add" @click="handleProduct">Add Product</button>
+    
   </div>
 </template>
 
@@ -29,7 +31,9 @@ import Header from './components/Header.vue'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useCustomerStore } from './stores/customerData'
 import { useProductStore } from './stores/productData'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const store = useCustomerStore()
 const productStore = useProductStore()
 
@@ -39,7 +43,12 @@ const focusedIndex = ref(0)
 const isDragging = ref(false)
 let startX = 0
 let scrollLeft = 0
+const buttonClick=ref(false)
 
+function handleProduct(){
+  alert("button clicked")
+  router.push("/prodForm")
+}
 function startDrag(e) {
   isDragging.value = true
   startX = e.pageX - carouselRef.value.offsetLeft
@@ -147,5 +156,11 @@ onBeforeUnmount(() => {
   color: green;
   font-size: 16px;
   margin-top: 5px;
+}
+.add{
+  width:20%;
+  margin-left:600px;
+  height:60px;
+  margin-top:40px;
 }
 </style>

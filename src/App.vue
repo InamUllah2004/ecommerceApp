@@ -1,4 +1,5 @@
 <template>
+  
       <RouterView/>
 </template>
 
@@ -6,6 +7,7 @@
 </script>
 
 <style>
+
 body{
   background-color:black;
 }

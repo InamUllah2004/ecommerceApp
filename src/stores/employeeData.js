@@ -85,6 +85,5 @@ export const useEmployeeStore = defineStore('employee', {
   this.employeeIDClicked = id
   localStorage.setItem('employeeIDClicked', id)
    }
-
-  }
+   }
 })
